@@ -1,23 +1,32 @@
 {
   "expo": {
-    "name": "seguridadMovil",
+    "name": "Seguridad Móvil UniSabana",
     "slug": "seguridadMovil",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "seguridadmovil",
-    "userInterfaceStyle": "automatic",
+    "scheme": [
+      "unisabana-auth",
+      "seguridadmovil"
+    ],
+    "userInterfaceStyle": "dark",
     "ios": {
-      "icon": "./assets/expo.icon"
+      "icon": "./assets/expo.icon",
+      "infoPlist": {
+        "NSCameraUsageDescription": "Se requiere acceso a la cámara para escanear códigos QR de semillas TOTP (otpauth://totp)."
+      }
     },
     "android": {
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
+        "backgroundColor": "#0A192F",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
         "backgroundImage": "./assets/images/android-icon-background.png",
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "permissions": [
+        "android.permission.CAMERA"
+      ]
     },
     "web": {
       "output": "server",
@@ -28,9 +37,16 @@
       [
         "expo-splash-screen",
         {
-          "backgroundColor": "#208AEF",
+          "backgroundColor": "#0A192F",
           "image": "./assets/images/splash-icon.png",
           "imageWidth": 76
+        }
+      ],
+      "expo-secure-store",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Permitir a Seguridad Móvil escanear códigos QR TOTP (RFC 6238)."
         }
       ]
     ],

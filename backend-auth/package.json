@@ -1,0 +1,15 @@
+{
+  "name": "backend-auth-unisabana",
+  "version": "1.0.0",
+  "description": "Backend de Autenticación Móvil: OAuth 2.0 + PKCE (RFC 7636), Silent Refresh, Step-Up 2FA (TOTP RFC 6238) y Caché Anti-Replay",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
+  }
+}
+
